@@ -27,7 +27,7 @@ export default function reducer(state = initState, action) {
             };
         case RESET:
             return {
-                count: response.data.count
+                count: [32.29446, 68.858182]
             };
         default:
             return state

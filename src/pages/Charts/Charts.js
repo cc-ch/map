@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import {beijing, shanghai, nanjing, reset} from 'actions/counter';
+// import {beijing, shanghai, nanjing, reset} from 'actions/counter';
 
 import {connect} from 'react-redux';
 
 import './Charts.css'
-// import { beijing, shanghai, nanjing, reset } from '../../redux/actions/counter';
+import { beijing, shanghai, nanjing, reset } from '../../redux/actions/counter';
 
 // mock data
 import axios from 'axios';
 import '../../../mock/mock';
+
 
 class Counter extends Component {
     render() {
@@ -47,6 +48,7 @@ const mapDispatchToProps = (dispatch) => {
         reset: () => {
             axios.get('/api/user')
                 .then((response) => {
+                    console.log(response.data)
                     // return {
                     //     count: response.data.count
                     // };
