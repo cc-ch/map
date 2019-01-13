@@ -1,7 +1,7 @@
-import counter from './reducers/counter';
+import coordinate from './reducers/counter';
 
 export default function combineReducers(state = {}, action) {
     return {
-        coordinate: counter(state.coordinate, action)
+        coordinate: coordinate(state.coordinate, action)
     }
 }

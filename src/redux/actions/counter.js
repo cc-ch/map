@@ -1,17 +1,22 @@
 /*action*/
 
-export const INCREMENT = "counter/INCREMENT";
-export const DECREMENT = "counter/DECREMENT";
-export const RESET = "counter/RESET";
+export const BEIJING = "charts/BEIJING";
+export const SHANGHAI = "charts/SHANGHAI";
+export const NANJING = "charts/NANJING";
+export const RESET = "charts/RESET";
 
-export function increment() {
-    return {type: INCREMENT}
+export function beijing() {
+    return { type: BEIJING }
 }
 
-export function decrement() {
-    return {type: DECREMENT}
+export function shanghai() {
+    return { type: SHANGHAI }
+}
+
+export function nanjing() {
+    return { type: NANJING }
 }
 
 export function reset() {
-    return {type: RESET}
+    return { type: RESET }
 }
