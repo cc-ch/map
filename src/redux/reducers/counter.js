@@ -1,27 +1,29 @@
-import {INCREMENT, DECREMENT, RESET} from '../actions/counter';
+import { INCREMENT, DECREMENT, RESET } from '../actions/counter';
 
 /*
-* 初始化state
+ * 初始化state
  */
 
 const initState = {
-    count: 0
+    count: [2.29446, 48.858182]
 };
 /*
-* reducer
+ * reducer
  */
 export default function reducer(state = initState, action) {
     switch (action.type) {
         case INCREMENT:
             return {
-                count: state.count + 1
+                count: [4.29446, 50.858182]
             };
         case DECREMENT:
             return {
-                count: state.count - 1
+                count: [122.29446, 68.858182]
             };
         case RESET:
-            return {count: 0};
+            return {
+                count: [102.29446, 38.858182]
+            };
         default:
             return state
     }

@@ -8,14 +8,14 @@ import './Charts.css'
 class Counter extends Component {
     render() {
         return (
-            <div>
-                <div>当前计数为{this.props.counter.count}</div>
-                <button onClick={() => this.props.increment()}>自增123
-                </button>
-                <button onClick={() => this.props.decrement()}>自减
-                </button>
-                <button onClick={() => this.props.reset()}>重置
-                </button>
+            <div className="ConterlButton">
+                <ul className="clearfix">
+                    <li onClick={() => this.props.increment()}>北京</li>
+                    <li onClick={() => this.props.decrement()}>上海</li>
+                    <li onClick={() => this.props.reset()}>南京</li>
+                </ul>
+
+                <div>当前位置{this.props.coordinate.count[0]}  {this.props.coordinate.count[1]}</div>
             </div>
         )
     }
@@ -23,7 +23,7 @@ class Counter extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        counter: state.counter
+        coordinate: state.coordinate
     }
 };
 

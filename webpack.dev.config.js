@@ -7,57 +7,58 @@ module.exports = {
     mode: 'development',
     /*入口*/
     entry: [
-            'react-hot-loader/patch',
-            path.join(__dirname, 'src/index.js')
-        ],
-    
+        'react-hot-loader/patch',
+        path.join(__dirname, 'src/index.js')
+    ],
+
     /*输出到dist文件夹，输出文件名字为bundle.js*/
     output: {
         path: path.join(__dirname, './dist'),
         filename: '[name].[hash].js',
         chunkFilename: '[name].js',
-        publicPath : '/'
+        publicPath: '/'
     },
-    
+
     devtool: 'inline-source-map',
 
     /*src文件夹下面的以.js结尾的文件，要使用babel解析*/
     module: {
         rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: ['babel-loader?cacheDirectory=true'],
-            include: path.join(__dirname, 'src')
-        },
-        {
-            test: /\.css$/,
-            use: [{
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                  // you can specify a publicPath here
-                  // by default it use publicPath in webpackOptions.output
-                  publicPath: '../'
-                }
-              },
-              "css-loader"
-            ]
-        },
-        {
-            test: /\.(png|jpg|gif)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8192
-                }
-            }]
-        }]
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader?cacheDirectory=true'],
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.css$/,
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // you can specify a publicPath here
+                            // by default it use publicPath in webpackOptions.output
+                            publicPath: '../'
+                        }
+                    },
+                    "css-loader"
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192
+                    }
+                }]
+            }
+        ]
     },
 
     devServer: {
         port: 8080,
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
-        host: '10.1.200.51'
+        host: '0.0.0.0'
     },
 
     resolve: {

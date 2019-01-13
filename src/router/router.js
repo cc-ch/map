@@ -6,7 +6,7 @@ import Bundle from './Bundle';
 
 import MapStatic from 'bundle-loader?lazy&name=map!pages/Map/Map';
 import Unity from 'bundle-loader?lazy&name=unity!pages/Unity/unity';
-import Counter from 'bundle-loader?lazy&name=unity!pages/Charts/Charts';
+import Charts from 'pages/Charts/Charts';
 
 const Loading = function () {
     return <div>Loading...</div>
@@ -23,10 +23,11 @@ const createComponent = (component) => (props) => (
 const getRouter = () => (
     <Router>
         <div>
+            <Charts />
             <Switch>
                 <Route exact path="/" component={createComponent(MapStatic)}/>
                 <Route path="/unity" component={createComponent(Unity)}/>
-                <Route path="/charts" component={createComponent(charts)}/>
+                {/* <Route path="/charts" component={createComponent(Charts)}/> */}
             </Switch>
         </div>
     </Router>
